@@ -1,74 +1,41 @@
-# React + TypeScript + Vite
+Project Overview
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a small frontend test project built using React + Vite + TypeScript.
 
-Currently, two official plugins are available:
+While the requirements could be fulfilled using vanilla JavaScript, I intentionally chose a modern React-based setup to better demonstrate real-world development practices, scalability, and maintainability that are typically expected in production applications.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Why Not Vanilla JS?
 
-## React Compiler
+The same functionality can absolutely be implemented using plain HTML, CSS, and JavaScript.
+However, in professional environments:
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+Projects tend to grow over time
 
-## Expanding the ESLint configuration
+Codebases are maintained by multiple developers
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Reusability, structure, and consistency become critical
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Using React and supporting libraries reflects how I would approach the same problem in a real production scenario.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Libraries Used & Rationale
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+React – Component-based structure for clarity and reusability
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+TypeScript – Type safety and better developer experience
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+styled-components – Scoped, maintainable styling aligned with component architecture
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-# coup
+framer-motion – Declarative animations commonly used in modern UIs
+
+These tools are not strictly required for a small task, but they demonstrate practical decision-making and familiarity with commonly used frontend tooling.
+
+Scripts
+npm run dev       # Start development server
+npm run build     # Build for production
+npm run preview   # Preview production build
+npm run lint      # Run ESLint
+npm run start     # Build and serve production build
+
+Final Note
+
+The goal of this setup is not over-engineering, but to show how I translate simple requirements into a clean, scalable solution, similar to how I would approach tasks in a real-world team environment.

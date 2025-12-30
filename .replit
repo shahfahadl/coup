@@ -1,0 +1,6 @@
+language = "nodejs"
+run = "npm start"
+
+[deploy]
+run = ["sh", "-c", "npm run build && npx serve -s dist -l ${PORT:-8080}"]
+
